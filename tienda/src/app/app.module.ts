@@ -3,22 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 
+import { routing } from './app.routing';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { routing } from "./app.routing";
 import { InicioComponent } from './components/inicio/inicio.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    SidebarComponent
+    NavComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule,
-    FormsModule,
+    FormsModule, 
     HttpClientModule,
     routing
   ],
