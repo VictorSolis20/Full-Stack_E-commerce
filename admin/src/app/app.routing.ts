@@ -5,8 +5,10 @@ import { LoginComponent } from './components/login/login.component';
 
 import { AdminGuard } from './guards/admin.guard';
 import { IndexClienteComponent } from './components/clientes/index-cliente/index-cliente.component';
+import { CreateClienteComponent } from './components/clientes/create-cliente/create-cliente.component';
 
 const appRoute: Routes = [
+  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: 'inicio', component: InicioComponent, canActivate: [AdminGuard] },
 
   {
@@ -17,6 +19,11 @@ const appRoute: Routes = [
         component: IndexClienteComponent,
         canActivate: [AdminGuard],
       },
+      {
+        path: 'clientes/registro',
+        component: CreateClienteComponent,
+        canActivate: [AdminGuard],
+      }
     ],
   },
 
