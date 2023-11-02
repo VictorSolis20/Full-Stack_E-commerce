@@ -13,10 +13,20 @@ export class ClienteService {
     this.url = GLOBAL.url;
   }
 
-  listar_clientes_filtro_admin(tipo: string | null,filtro: string | null): Observable<any> {
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.get(this.url + 'listar_clientes_filtro_admin/'+tipo+'/'+filtro, {
-      headers: headers,
+  listar_clientes_filtro_admin(
+    tipo: string | null,
+    filtro: string | null,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
     });
+    return this._http.get(
+      this.url + 'listar_clientes_filtro_admin/' + tipo + '/' + filtro,
+      {
+        headers: headers,
+      }
+    );
   }
 }
