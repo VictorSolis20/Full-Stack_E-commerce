@@ -45,4 +45,53 @@ export class ClienteService {
       }
     );
   }
+
+  obtener_cliente_admin(
+    id: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.get(
+      this.url + 'obtener_cliente_admin/'+id,
+      {
+        headers: headers,
+      }
+    );
+  }
+
+  actualizar_cliente_admin(
+    id: any,
+    data: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.put(
+      this.url + 'actualizar_cliente_admin/'+id, data,
+      {
+        headers: headers,
+      }
+    );
+  }
+
+  eliminar_cliente_admin(
+    id: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.delete(
+      this.url + 'eliminar_cliente_admin/'+id,
+      {
+        headers: headers,
+      }
+    );
+  }
 }
