@@ -8,6 +8,7 @@ var port = process.env.PORT || 4201;
 
 var cliente_route = require('./routes/cliente');
 var admin_route = require('./routes/admin');
+var producto_route = require('./routes/producto');
 
 mongoose.connect('mongodb://127.0.0.1:27017/tienda', {
     useNewUrlParser: true,
@@ -35,5 +36,6 @@ app.use((req, res, next) => {
 
 app.use('/api', cliente_route);
 app.use('/api', admin_route);
+app.use('/api', producto_route);
 
 module.exports = app;
