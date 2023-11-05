@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import { ProductoService } from 'src/app/services/producto.service';
 
@@ -21,10 +22,12 @@ export class CreateProductoComponent implements OnInit{
   public imgSelect : any | ArrayBuffer = 'assets/img/01.jpg';
   public config : any = {};
   public token;
+  public load_btn = false;
 
   constructor(
     private _productoService : ProductoService,
-    private _adminService : AdminService
+    private _adminService : AdminService,
+    private _router : Router
   ){
     this.config = {
       height: 500
@@ -40,15 +43,25 @@ export class CreateProductoComponent implements OnInit{
     if(registroForm.valid){
       console.log(this.producto);
       console.log(this.file);
-      
+      this.load_btn = true;
       this._productoService.registro_producto_admin(this.producto, this.file, this.token).subscribe(
         response=>{
-          console.log(response);
+          iziToast.show({
+            title: 'SUCCESS',
+            titleColor: '#1DC74C',
+            color: '#FFF',
+            class: 'text-success',
+            position: 'topRight',
+            message: 'Se registro correctamente el nuevo producto.',
+          });
+          this.load_btn = false;
+
+          this._router.navigate(['/panel/productos']);
           
         },
         error=>{
           console.log(error);
-          
+          this.load_btn = false;
         }
       );
 
@@ -61,6 +74,7 @@ export class CreateProductoComponent implements OnInit{
         position: 'topRight',
         message: 'Los datos del formulario no son validos',
       });
+      this.load_btn = false;
 
       $('#input-portada').text('Seleccionar imagen');
       this.imgSelect = 'assets/img/01.jpg';
