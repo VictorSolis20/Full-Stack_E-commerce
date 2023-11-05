@@ -13,22 +13,22 @@ declare var $: any;
   templateUrl: './create-producto.component.html',
   styleUrls: ['./create-producto.component.css']
 })
-export class CreateProductoComponent implements OnInit{
+export class CreateProductoComponent implements OnInit {
 
-  public producto : any = {
+  public producto: any = {
     categoria: ''
   };
   public file: File | null = null;
-  public imgSelect : any | ArrayBuffer = 'assets/img/01.jpg';
-  public config : any = {};
+  public imgSelect: any | ArrayBuffer = 'assets/img/01.jpg';
+  public config: any = {};
   public token;
   public load_btn = false;
 
   constructor(
-    private _productoService : ProductoService,
-    private _adminService : AdminService,
-    private _router : Router
-  ){
+    private _productoService: ProductoService,
+    private _adminService: AdminService,
+    private _router: Router
+  ) {
     this.config = {
       height: 500
     }
@@ -36,36 +36,47 @@ export class CreateProductoComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
+
   }
 
-  registro(registroForm: NgForm){
-    if(registroForm.valid){
-      console.log(this.producto);
-      console.log(this.file);
-      this.load_btn = true;
-      this._productoService.registro_producto_admin(this.producto, this.file, this.token).subscribe(
-        response=>{
-          iziToast.show({
-            title: 'SUCCESS',
-            titleColor: '#1DC74C',
-            color: '#FFF',
-            class: 'text-success',
-            position: 'topRight',
-            message: 'Se registro correctamente el nuevo producto.',
-          });
-          this.load_btn = false;
+  registro(registroForm: NgForm) {
+    if (registroForm.valid) {
+      if (this.file == undefined) {
+        iziToast.show({
+          title: 'ERROR',
+          titleColor: '#FF0000',
+          color: '#FFF',
+          class: 'text-danger',
+          position: 'topRight',
+          message: 'Debe subir una portada para registrar'
+        });
+      } else {
+        console.log(this.producto);
+        console.log(this.file);
+        this.load_btn = true;
+        this._productoService.registro_producto_admin(this.producto, this.file, this.token).subscribe(
+          response => {
+            iziToast.show({
+              title: 'SUCCESS',
+              titleColor: '#1DC74C',
+              color: '#FFF',
+              class: 'text-success',
+              position: 'topRight',
+              message: 'Se registro correctamente el nuevo producto.',
+            });
+            this.load_btn = false;
 
-          this._router.navigate(['/panel/productos']);
-          
-        },
-        error=>{
-          console.log(error);
-          this.load_btn = false;
-        }
-      );
+            this._router.navigate(['/panel/productos']);
 
-    }else{
+          },
+          error => {
+            console.log(error);
+            this.load_btn = false;
+          }
+        );
+      }
+
+    } else {
       iziToast.show({
         title: 'ERROR',
         titleColor: '#FF0000',
@@ -88,7 +99,7 @@ export class CreateProductoComponent implements OnInit{
   //   if(event.target.files && event.target.files[0]){
   //     file = <File>event.target.files[0];
   //     console.log(file);
-      
+
   //   }else{
   //     iziToast.show({
   //       title: 'ERROR',
@@ -135,7 +146,7 @@ export class CreateProductoComponent implements OnInit{
   fileChangeEvent(event: any): void {
     if (event.target.files && event.target.files[0]) {
       const file = <File>event.target.files[0]; // Define 'file' here
-  
+
       if (file.size <= 4000000) {
         if (
           file.type == 'image/png' ||
@@ -191,8 +202,8 @@ export class CreateProductoComponent implements OnInit{
     }
 
     console.log(this.file);
-    
+
   }
-  
+
 
 }
