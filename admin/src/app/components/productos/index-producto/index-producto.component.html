@@ -20,7 +20,8 @@
         <div class="row">
             <div class="col-9">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Titulo del producto" name="filtro" [(ngModel)]="filtro">
+                    <input class="form-control" type="text" placeholder="Titulo del producto" name="filtro"
+                        [(ngModel)]="filtro">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button" (click)="filtrar()">Filtrar</button>
                         <button class="btn btn-info" type="button" (click)="resetear()">Resetear</button>
@@ -57,7 +58,8 @@
                         <tr>
                             <td>
                                 <h6 style="padding-bottom: 0; margin-bottom: 0;">
-                                    <img style="width: 50px;" [src]="url +'obtener_portada/'+ item.portada" class="img-thumbnail rounded-0" alt="Square image">
+                                    <img style="width: 50px;" [src]="url +'obtener_portada/'+ item.portada"
+                                        class="img-thumbnail rounded-0" alt="Square image">
                                     {{item.titulo}}
                                 </h6>
                             </td>
@@ -72,7 +74,38 @@
                                         OPCIONES
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" [routerLink]="['/panel/productos',item._id]" routerLinkActive="router-link-active">Editar producto</a>
+                                        <a class="dropdown-item" [routerLink]="['/panel/productos',item._id]"
+                                            routerLinkActive="router-link-active">Editar producto</a>
+                                        <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal"
+                                            [attr.data-target]="'#delete-'+item._id">Eliminar producto</a>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="delete-{{item._id}}" tabindex="-1" style="display: none;"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Confirmación de eliminación</h4>
+                                                <button class="close" type="button" data-dismiss="modal"
+                                                    aria-label="Close"><span aria-hidden="true">x</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>{{item.titulo}}, ¿Desea eliminar este producto?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-secondary btn-sm" type="button"
+                                                    data-dismiss="modal">Cancelar</button>
+                                                <button *ngIf="!load_btn" class="btn btn-primary btn-shadow btn-sm"
+                                                    (click)="eliminar(item._id)" type="button">Si,
+                                                    eliminar</button>
+                                                <button *ngIf="load_btn" type="button" class="btn btn-secondary" disabled>
+                                                    <span class="spinner-grow spinner-grow-sm mr-2" role="status"
+                                                        aria-hidden="true"></span>
+                                                    Eliminando...
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </td>

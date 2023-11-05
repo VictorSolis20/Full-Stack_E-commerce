@@ -136,10 +136,28 @@ const actualizar_producto_admin = async function(req,res){
 
 }
 
+const eliminar_producto_admin = async function(req,res){
+    if (req.user) {
+        if (req.user.role == 'admin') {
+            
+            var id = req.params['id'];
+
+            let reg = await Producto.findByIdAndRemove({_id:id});
+            res.status(200).send({data:reg});
+            
+        } else {
+            res.status(500).send({ message: 'NoAccess' });
+        }
+    } else {
+        res.status(500).send({ message: 'NoAccess' });
+    }
+}
+
 module.exports = {
     registro_producto_admin,
     listar_productos_admin,
     obtener_portada,
     obtener_producto_admin,
-    actualizar_producto_admin
+    actualizar_producto_admin,
+    eliminar_producto_admin
 }
