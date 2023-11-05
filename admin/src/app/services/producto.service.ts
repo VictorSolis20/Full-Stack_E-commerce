@@ -126,4 +126,52 @@ export class ProductoService {
       }
     );
   }
+
+  listar_inventario_producto_admin(
+    id: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.get(
+      this.url + 'listar_inventario_producto_admin/' + id,
+      {
+        headers: headers,
+      }
+    );
+  }
+
+  eliminar_inventario_producto_admin(
+    id: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.delete(
+      this.url + 'eliminar_inventario_producto_admin/' + id,
+      {
+        headers: headers,
+      }
+    );
+  }
+
+  registro_inventario_producto_admin(
+    data: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.post(
+      this.url + 'registro_inventario_producto_admin',data,
+      {
+        headers: headers,
+      }
+    );
+  }
 }
