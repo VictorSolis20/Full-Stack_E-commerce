@@ -29,4 +29,20 @@ export class CuponService {
       }
     );
   }
+
+  listar_cupones_admin(
+    filtro: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.get(
+      this.url + 'listar_cupones_admin/'+filtro,
+      {
+        headers: headers,
+      }
+    );
+  }
 }
