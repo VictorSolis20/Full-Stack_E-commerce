@@ -6,7 +6,7 @@ var productoController = require('../controllers/productoController');
 var api = express.Router();
 var auth = require('../middlewares/authenticate');
 var multiparty = require('connect-multiparty');
-var path = multiparty({uploadDir: './uploads/productos'})
+var path = multiparty({uploadDir: './uploads/productos'});
 
 //PRODUCTOS
 api.post('/registro_producto_admin',[auth.auth,path],productoController.registro_producto_admin);

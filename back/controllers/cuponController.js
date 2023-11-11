@@ -23,7 +23,7 @@ const listar_cupones_admin = async function(req, res){
             
             var filtro = req.params['filtro'];
 
-            let reg = await Cupon.find({codigo: new RegExp(filtro, 'i')}).sort({createdAt: -1});
+            let reg = await Cupon.find({codigo: new RegExp(filtro, 'i')}).sort({createdAt:-1});
             res.status(200).send({data: reg});
 
         }else{
