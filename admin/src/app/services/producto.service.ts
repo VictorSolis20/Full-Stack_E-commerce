@@ -174,4 +174,21 @@ export class ProductoService {
       }
     );
   }
+
+  actualizar_producto_variedades_admin(
+    data: any,
+    id: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.put(
+      this.url + 'actualizar_producto_variedades_admin/' + id, data,
+      {
+        headers: headers,
+      }
+    );
+  }
 }
