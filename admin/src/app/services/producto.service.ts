@@ -191,4 +191,43 @@ export class ProductoService {
       }
     );
   }
+
+  agregar_imagen_galeria_admin(
+    id: any,
+    data: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Authorization':token !== null ? token.toString() : ''
+    });
+
+    const fd = new FormData();
+    fd.append('_id',data._id);
+    fd.append('imagen',data.imagen);
+
+    return this._http.put(
+      this.url + 'agregar_imagen_galeria_admin/'+id, fd,
+      {
+        headers: headers,
+      }
+    );
+  }
+
+  eliminar_imagen_galeria_admin(
+    id: any,
+    data: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.put(
+      this.url + 'eliminar_imagen_galeria_admin/' + id, data,
+      {
+        headers: headers,
+      }
+    );
+  }
+
 }
