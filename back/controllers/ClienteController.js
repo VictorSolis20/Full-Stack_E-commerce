@@ -190,6 +190,46 @@ const obtener_cliente_guest = async function (req, res) {
     }
 }
 
+const actualizar_perfil_cliente_guest = async function (req, res) {
+    if (req.user) {
+        var id = req.params['id'];
+        var data = req.body;
+
+        if(data.password){
+            console.log('Con contraseña');
+            bcrypt.hash(data.password,null,null, async function(err,hash){
+                var reg = await Cliente.findByIdAndUpdate({_id:id},{
+                    nombres: data.nombres,
+                    apellidos: data.apellidos,
+                    telefono: data.telefono,
+                    f_nacimiento: data.f_nacimiento,
+                    dni: data.dni,
+                    genero: data.genero,
+                    pais: data.pais,
+                    password: hash,
+                });
+                res.status(200).send({data:reg});
+            });
+            
+        }else{
+            console.log('Sin contraseña');
+            var reg = await Cliente.findByIdAndUpdate({_id:id},{
+                nombres: data.nombres,
+                apellidos: data.apellidos,
+                telefono: data.telefono,
+                f_nacimiento: data.f_nacimiento,
+                dni: data.dni,
+                genero: data.genero,
+                pais: data.pais,
+            });
+            res.status(200).send({data:reg});
+        }
+
+    } else {
+        res.status(500).send({ message: 'NoAccess' });
+    }
+}
+
 module.exports = {
     registro_cliente,
     login_cliente,
@@ -198,5 +238,6 @@ module.exports = {
     obtener_cliente_admin,
     actualizar_cliente_admin,
     eliminar_cliente_admin,
-    obtener_cliente_guest
+    obtener_cliente_guest,
+    actualizar_perfil_cliente_guest
 }

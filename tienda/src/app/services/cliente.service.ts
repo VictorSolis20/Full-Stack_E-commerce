@@ -35,4 +35,9 @@ export class ClienteService {
     );
   }
 
+  actualizar_perfil_cliente_guest(id: any,data: any, token: string | number | null): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type': 'application/json',Authorization: token !== null ? token.toString() : ''});
+    return this._http.put(this.url + 'actualizar_perfil_cliente_guest/'+id,data,{headers: headers});
+  }
+
 }
