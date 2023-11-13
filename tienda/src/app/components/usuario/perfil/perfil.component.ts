@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { ClienteService } from 'src/app/services/cliente.service';
 
 declare var iziToast: any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-perfil',
@@ -36,6 +38,7 @@ export class PerfilComponent implements OnInit {
 
   actualizar(actualizarForm: NgForm){
     if(actualizarForm.valid){
+      this.cliente.password = $('#input_password').val();
       this._clienteService.actualizar_perfil_cliente_guest(this.id,this.cliente,this.token).subscribe(
         response=>{
           iziToast.show({
