@@ -117,7 +117,7 @@ export class UpdateProductoComponent implements OnInit {
         color: '#FFF',
         class: 'text-danger',
         position: 'topRight',
-        message: 'Los datos del formulario no son validos',
+        message: 'Los datos del formulario no son válidos',
       });
       this.load_btn = false;
     }
