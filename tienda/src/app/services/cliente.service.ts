@@ -77,4 +77,11 @@ export class ClienteService {
     });
   }
 
+  listar_productos_publico(filtro: string): Observable<any> {
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.get(this.url + 'listar_productos_publico/'+filtro, {
+      headers: headers,
+    });
+  }
+
 }

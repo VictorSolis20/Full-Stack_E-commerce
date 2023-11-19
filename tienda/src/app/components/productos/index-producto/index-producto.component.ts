@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GLOBAL } from 'src/app/services/GLOBAL';
 import { ClienteService } from 'src/app/services/cliente.service';
 declare var noUiSlider : any;
 declare var $: any;
@@ -14,14 +15,26 @@ export class IndexProductoComponent implements OnInit {
 
   public config_global : any = {};
   public filter_categoria = '';
+  public productos : Array<any> = [];
+  public filter_producto = '';
+  public url;
+  public load_data = true;
   
   constructor(
     private _clienteService : ClienteService
   ){
+    this.url = GLOBAL.url;
     this._clienteService.obtener_config_publico().subscribe(
       response=>{
         this.config_global = response.data;
-        console.log(this.config_global);
+        
+      }
+    )
+
+    this._clienteService.listar_productos_publico(this.filter_producto).subscribe(
+      response=>{
+        this.productos = response.data;
+        this.load_data = false;
         
       }
     )
@@ -48,7 +61,6 @@ export class IndexProductoComponent implements OnInit {
     })
 
     slider.noUiSlider.on('update', function (values: any) {
-      console.log(values);
       
         $('.cs-range-slider-value-min').val(values[0]);
         $('.cs-range-slider-value-max').val(values[1]);
@@ -57,7 +69,6 @@ export class IndexProductoComponent implements OnInit {
   }
 
   buscar_categorias(){
-    console.log(this.filter_categoria);
     if(this.filter_categoria){
       var search = new RegExp(this.filter_categoria, 'i');
       this.config_global.categorias = this.config_global.categorias.filter(
@@ -71,6 +82,16 @@ export class IndexProductoComponent implements OnInit {
         }
       )
     }
+  }
+
+  buscar_producto(){
+    this._clienteService.listar_productos_publico(this.filter_producto).subscribe(
+      response=>{
+        this.productos = response.data;
+        this.load_data = false;
+        
+      }
+    )
   }
 
 }
