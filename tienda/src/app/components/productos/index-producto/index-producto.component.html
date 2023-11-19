@@ -221,7 +221,15 @@
 
             <!-- Product grid -->
             <div class="col">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3" data-filters-columns>
+                <div class="row" *ngIf="load_data">
+                    <div class="col-12 text-center">
+                        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="!load_data" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3" data-filters-columns>
 
                     <!-- Item -->
                     <div class="col pb-sm-2 mb-grid-gutter" *ngFor="let item of productos">
