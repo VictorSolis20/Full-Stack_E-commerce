@@ -60,35 +60,7 @@
                         <span class="font-size-sm text-muted text-nowrap ml-2 d-none d-lg-block">products per
                             page</span>
                     </div>
-                    <nav class="ml-auto" aria-label="Pagination">
-                        <ul class="pagination mb-0">
-                            <li class="page-item d-sm-none">
-                                <span class="page-link page-link-static">1 / 5</span>
-                            </li>
-                            <li class="page-item active d-none d-sm-block" aria-current="page">
-                                <span class="page-link">1
-                                    <span class="sr-only">(current)</span>
-                                </span>
-                            </li>
-                            <li class="page-item d-none d-sm-block">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item d-none d-sm-block">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item d-none d-sm-block">
-                                <a class="page-link" href="#">4</a>
-                            </li>
-                            <li class="page-item d-none d-sm-block">
-                                <a class="page-link" href="#">5</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <i class="cxi-arrow-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="productos.length"></ngb-pagination>
                 </div>
             </div>
         </div>
