@@ -84,4 +84,20 @@ export class ClienteService {
     });
   }
 
+  agregar_carrito_cliente(
+    data: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.post(
+      this.url + 'agregar_carrito_cliente',data,
+      {
+        headers: headers,
+      }
+    );
+  }
+
 }
