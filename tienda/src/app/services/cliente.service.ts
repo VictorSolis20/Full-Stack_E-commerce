@@ -132,4 +132,20 @@ export class ClienteService {
     );
   }
 
+  registro_direccion_cliente(
+    data: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.post(
+      this.url + 'registro_direccion_cliente',data,
+      {
+        headers: headers,
+      }
+    );
+  }
+
 }
