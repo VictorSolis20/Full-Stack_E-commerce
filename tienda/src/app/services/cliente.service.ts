@@ -116,4 +116,20 @@ export class ClienteService {
     );
   }
 
+  eliminar_carrito_cliente(
+    id: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.delete(
+      this.url + 'eliminar_carrito_cliente/'+id,
+      {
+        headers: headers,
+      }
+    );
+  }
+
 }
