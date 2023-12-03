@@ -1,0 +1,131 @@
+
+[
+  {
+    "id": "01",
+    "name": "Aguascalientes"
+  },
+  {
+    "id": "02",
+    "name": "Baja California"
+  },
+  {
+    "id": "03",
+    "name": "Baja California Sur"
+  },
+  {
+    "id": "04",
+    "name": "Campeche"
+  },
+  {
+    "id": "05",
+    "name": "Chiapas"
+  },
+  {
+    "id": "06",
+    "name": "Chihuahua"
+  },
+  {
+    "id": "07",
+    "name": "Coahuila"
+  },
+  {
+    "id": "08",
+    "name": "Colima"
+  },
+  {
+    "id": "09",
+    "name": "Durango"
+  },
+  {
+    "id": "10",
+    "name": "Guanajuato"
+  },
+  {
+    "id": "11",
+    "name": "Guerrero"
+  },
+  {
+    "id": "12",
+    "name": "Hidalgo"
+  },
+  {
+    "id": "13",
+    "name": "Jalisco"
+  },
+  {
+    "id": "14",
+    "name": "Michoacán"
+  },
+  {
+    "id": "15",
+    "name": "Morelos"
+  },
+  {
+    "id": "16",
+    "name": "Nayarit"
+  },
+  {
+    "id": "17",
+    "name": "Nuevo León"
+  },
+  {
+    "id": "18",
+    "name": "Oaxaca"
+  },
+  {
+    "id": "19",
+    "name": "Puebla"
+  },
+  {
+    "id": "20",
+    "name": "Querétaro"
+  },
+  {
+    "id": "21",
+    "name": "Quintana Roo"
+  },
+  {
+    "id": "22",
+    "name": "San Luis Potosí"
+  },
+  {
+    "id": "23",
+    "name": "Sinaloa"
+  },
+  {
+    "id": "24",
+    "name": "Sonora"
+  },
+  {
+    "id": "25",
+    "name": "Tabasco"
+  },
+  {
+    "id": "26",
+    "name": "Tamaulipas"
+  },
+  {
+    "id": "27",
+    "name": "Tlaxcala"
+  },
+  {
+    "id": "28",
+    "name": "Veracruz"
+  },
+  {
+    "id": "29",
+    "name": "Yucatán"
+  },
+  {
+    "id": "30",
+    "name": "Zacatecas"
+  },
+  {
+    "id": "31",
+    "name": "Estado de México"
+  },
+  {
+    "id": "32",
+    "name": "Ciudad de México"
+  }
+]

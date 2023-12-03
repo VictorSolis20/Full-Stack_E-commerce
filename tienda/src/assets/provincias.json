@@ -1,0 +1,803 @@
+
+[
+  {
+    "id": "0101",
+    "name": "Aguascalientes",
+    "department_id": "01"
+  },
+  {
+    "id": "0102",
+    "name": "Asientos",
+    "department_id": "01"
+  },
+  {
+    "id": "0103",
+    "name": "Calvillo",
+    "department_id": "01"
+  },
+  {
+    "id": "0104",
+    "name": "Jesús María",
+    "department_id": "01"
+  },
+  {
+    "id": "0105",
+    "name": "Rincón de Romos",
+    "department_id": "01"
+  },
+  {
+    "id": "0201",
+    "name": "Mexicali",
+    "department_id": "02"
+  },
+  {
+    "id": "0202",
+    "name": "Tijuana",
+    "department_id": "02"
+  },
+  {
+    "id": "0203",
+    "name": "Ensenada",
+    "department_id": "02"
+  },
+  {
+    "id": "0204",
+    "name": "Rosarito",
+    "department_id": "02"
+  },
+  {
+    "id": "0205",
+    "name": "Tecate",
+    "department_id": "02"
+  },
+  {
+    "id": "0301",
+    "name": "La Paz",
+    "department_id": "03"
+  },
+  {
+    "id": "0302",
+    "name": "Los Cabos",
+    "department_id": "03"
+  },
+  {
+    "id": "0303",
+    "name": "Comondú",
+    "department_id": "03"
+  },
+  {
+    "id": "0304",
+    "name": "Loreto",
+    "department_id": "03"
+  },
+  {
+    "id": "0305",
+    "name": "Mulegé",
+    "department_id": "03"
+  },
+  {
+    "id": "0401",
+    "name": "Campeche",
+    "department_id": "04"
+  },
+  {
+    "id": "0402",
+    "name": "Calkiní",
+    "department_id": "04"
+  },
+  {
+    "id": "0403",
+    "name": "Campeche",
+    "department_id": "04"
+  },
+  {
+    "id": "0404",
+    "name": "Carmen",
+    "department_id": "04"
+  },
+  {
+    "id": "0405",
+    "name": "Champotón",
+    "department_id": "04"
+  },
+  {
+    "id": "0501",
+    "name": "Tuxtla Gutiérrez",
+    "department_id": "05"
+  },
+  {
+    "id": "0502",
+    "name": "Arriaga",
+    "department_id": "05"
+  },
+  {
+    "id": "0503",
+    "name": "Bochil",
+    "department_id": "05"
+  },
+  {
+    "id": "0504",
+    "name": "Cintalapa",
+    "department_id": "05"
+  },
+  {
+    "id": "0505",
+    "name": "Comitán de Domínguez",
+    "department_id": "05"
+  },
+  {
+    "id": "0601",
+    "name": "Chihuahua",
+    "department_id": "06"
+  },
+  {
+    "id": "0602",
+    "name": "Aldama",
+    "department_id": "06"
+  },
+  {
+    "id": "0603",
+    "name": "Aquiles Serdán",
+    "department_id": "06"
+  },
+  {
+    "id": "0604",
+    "name": "Bachíniva",
+    "department_id": "06"
+  },
+  {
+    "id": "0605",
+    "name": "Balleza",
+    "department_id": "06"
+  },
+  {
+    "id": "0701",
+    "name": "Torreón",
+    "department_id": "07"
+  },
+  {
+    "id": "0702",
+    "name": "Matamoros",
+    "department_id": "07"
+  },
+  {
+    "id": "0703",
+    "name": "San Pedro",
+    "department_id": "07"
+  },
+  {
+    "id": "0704",
+    "name": "Francisco I. Madero",
+    "department_id": "07"
+  },
+  {
+    "id": "0705",
+    "name": "Gómez Palacio",
+    "department_id": "07"
+  },
+  {
+    "id": "0801",
+    "name": "Colima",
+    "department_id": "08"
+  },
+  {
+    "id": "0802",
+    "name": "Armería",
+    "department_id": "08"
+  },
+  {
+    "id": "0803",
+    "name": "Colima",
+    "department_id": "08"
+  },
+  {
+    "id": "0804",
+    "name": "Comala",
+    "department_id": "08"
+  },
+  {
+    "id": "0805",
+    "name": "Coquimatlán",
+    "department_id": "08"
+  },
+  {
+    "id": "0901",
+    "name": "Victoria de Durango",
+    "department_id": "09"
+  },
+  {
+    "id": "0902",
+    "name": "Canatlán",
+    "department_id": "09"
+  },
+  {
+    "id": "0903",
+    "name": "Canelas",
+    "department_id": "09"
+  },
+  {
+    "id": "0904",
+    "name": "Coneto de Comonfort",
+    "department_id": "09"
+  },
+  {
+    "id": "0905",
+    "name": "Cuencamé",
+    "department_id": "09"
+  },
+  {
+    "id": "1001",
+    "name": "Guanajuato",
+    "department_id": "10"
+  },
+  {
+    "id": "1002",
+    "name": "Abasolo",
+    "department_id": "10"
+  },
+  {
+    "id": "1003",
+    "name": "Acámbaro",
+    "department_id": "10"
+  },
+  {
+    "id": "1004",
+    "name": "San Miguel de Allende",
+    "department_id": "10"
+  },
+  {
+    "id": "1005",
+    "name": "Silao",
+    "department_id": "10"
+  },
+  {
+    "id": "1101",
+    "name": "Acapulco de Juárez",
+    "department_id": "11"
+  },
+  {
+    "id": "1102",
+    "name": "Ahuacuotzingo",
+    "department_id": "11"
+  },
+  {
+    "id": "1103",
+    "name": "Ajuchitlán del Progreso",
+    "department_id": "11"
+  },
+  {
+    "id": "1104",
+    "name": "Alcozauca de Guerrero",
+    "department_id": "11"
+  },
+  {
+    "id": "1105",
+    "name": "Alpoyeca",
+    "department_id": "11"
+  },
+  {
+    "id": "1201",
+    "name": "Pachuca de Soto",
+    "department_id": "12"
+  },
+  {
+    "id": "1202",
+    "name": "Actopan",
+    "department_id": "12"
+  },
+  {
+    "id": "1203",
+    "name": "Acatlán",
+    "department_id": "12"
+  },
+  {
+    "id": "1204",
+    "name": "Acaxochitlán",
+    "department_id": "12"
+  },
+  {
+    "id": "1205",
+    "name": "Ajacuba",
+    "department_id": "12"
+  },
+  {
+    "id": "1301",
+    "name": "Guadalajara",
+    "department_id": "13"
+  },
+  {
+    "id": "1302",
+    "name": "Acatic",
+    "department_id": "13"
+  },
+  {
+    "id": "1303",
+    "name": "Amatitán",
+    "department_id": "13"
+  },
+  {
+    "id": "1304",
+    "name": "Ameca",
+    "department_id": "13"
+  },
+  {
+    "id": "1305",
+    "name": "Arandas",
+    "department_id": "13"
+  },
+  {
+    "id": "1401",
+    "name": "Morelia",
+    "department_id": "14"
+  },
+  {
+    "id": "1402",
+    "name": "Acuitzio",
+    "department_id": "14"
+  },
+  {
+    "id": "1403",
+    "name": "Aguililla",
+    "department_id": "14"
+  },
+  {
+    "id": "1404",
+    "name": "Álvaro Obregón",
+    "department_id": "14"
+  },
+  {
+    "id": "1405",
+    "name": "Angamacutiro",
+    "department_id": "14"
+  },
+  {
+    "id": "1501",
+    "name": "Cuernavaca",
+    "department_id": "15"
+  },
+  {
+    "id": "1502",
+    "name": "Ahuatepec",
+    "department_id": "15"
+  },
+  {
+    "id": "1503",
+    "name": "Amacuzac",
+    "department_id": "15"
+  },
+  {
+    "id": "1504",
+    "name": "Atlatlahucan",
+    "department_id": "15"
+  },
+  {
+    "id": "1505",
+    "name": "Axochiapan",
+    "department_id": "15"
+  },
+  {
+    "id": "1601",
+    "name": "Tepic",
+    "department_id": "16"
+  },
+  {
+    "id": "1602",
+    "name": "Acaponeta",
+    "department_id": "16"
+  },
+  {
+    "id": "1603",
+    "name": "Ahuacatlán",
+    "department_id": "16"
+  },
+  {
+    "id": "1604",
+    "name": "Amatlán de Cañas",
+    "department_id": "16"
+  },
+  {
+    "id": "1605",
+    "name": "Bahía de Banderas",
+    "department_id": "16"
+  },
+  {
+    "id": "1701",
+    "name": "Monterrey",
+    "department_id": "17"
+  },
+  {
+    "id": "1702",
+    "name": "Abasolo",
+    "department_id": "17"
+  },
+  {
+    "id": "1703",
+    "name": "Agualeguas",
+    "department_id": "17"
+  },
+  {
+    "id": "1704",
+    "name": "Los Aldamas",
+    "department_id": "17"
+  },
+  {
+    "id": "1705",
+    "name": "Allende",
+    "department_id": "17"
+  },
+  {
+    "id": "1801",
+    "name": "Oaxaca de Juárez",
+    "department_id": "18"
+  },
+  {
+    "id": "1802",
+    "name": "Huajuapan de León",
+    "department_id": "18"
+  },
+  {
+    "id": "1803",
+    "name": "Salina Cruz",
+    "department_id": "18"
+  },
+  {
+    "id": "1804",
+    "name": "Juchitán de Zaragoza",
+    "department_id": "18"
+  },
+  {
+    "id": "1805",
+    "name": "Tehuantepec",
+    "department_id": "18"
+  },
+  {
+    "id": "1901",
+    "name": "Puebla",
+    "department_id": "19"
+  },
+  {
+    "id": "1902",
+    "name": "Acajete",
+    "department_id": "19"
+  },
+  {
+    "id": "1903",
+    "name": "Acateno",
+    "department_id": "19"
+  },
+  {
+    "id": "1904",
+    "name": "Acatlán",
+    "department_id": "19"
+  },
+  {
+    "id": "1905",
+    "name": "Acatzingo",
+    "department_id": "19"
+  },
+  {
+    "id": "2001",
+    "name": "Querétaro",
+    "department_id": "20"
+  },
+  {
+    "id": "2002",
+    "name": "Colón",
+    "department_id": "20"
+  },
+  {
+    "id": "2003",
+    "name": "Corregidora",
+    "department_id": "20"
+  },
+  {
+    "id": "2004",
+    "name": "Ezequiel Montes",
+    "department_id": "20"
+  },
+  {
+    "id": "2005",
+    "name": "Huimilpan",
+    "department_id": "20"
+  },
+  {
+    "id": "2101",
+    "name": "Chetumal",
+    "department_id": "21"
+  },
+  {
+    "id": "2102",
+    "name": "Bacalar",
+    "department_id": "21"
+  },
+  {
+    "id": "2103",
+    "name": "Benito Juárez",
+    "department_id": "21"
+  },
+  {
+    "id": "2104",
+    "name": "Cozumel",
+    "department_id": "21"
+  },
+  {
+    "id": "2105",
+    "name": "Felipe Carrillo Puerto",
+    "department_id": "21"
+  },
+  {
+    "id": "2201",
+    "name": "San Luis Potosí",
+    "department_id": "22"
+  },
+  {
+    "id": "2202",
+    "name": "Ahualulco",
+    "department_id": "22"
+  },
+  {
+    "id": "2203",
+    "name": "Alaquines",
+    "department_id": "22"
+  },
+  {
+    "id": "2204",
+    "name": "Aquismón",
+    "department_id": "22"
+  },
+  {
+    "id": "2205",
+    "name": "Armadillo de los Infante",
+    "department_id": "22"
+  },
+  {
+    "id": "2301",
+    "name": "Culiacán",
+    "department_id": "23"
+  },
+  {
+    "id": "2302",
+    "name": "Ahome",
+    "department_id": "23"
+  },
+  {
+    "id": "2303",
+    "name": "Angostura",
+    "department_id": "23"
+  },
+  {
+    "id": "2304",
+    "name": "Badiraguato",
+    "department_id": "23"
+  },
+  {
+    "id": "2305",
+    "name": "Concordia",
+    "department_id": "23"
+  },
+  {
+    "id": "2401",
+    "name": "Hermosillo",
+    "department_id": "24"
+  },
+  {
+    "id": "2402",
+    "name": "Cajeme",
+    "department_id": "24"
+  },
+  {
+    "id": "2403",
+    "name": "Guaymas",
+    "department_id": "24"
+  },
+  {
+    "id": "2404",
+    "name": "Agua Prieta",
+    "department_id": "24"
+  },
+  {
+    "id": "2405",
+    "name": "Caborca",
+    "department_id": "24"
+  },
+  {
+    "id": "2501",
+    "name": "Villahermosa",
+    "department_id": "25"
+  },
+  {
+    "id": "2502",
+    "name": "Balancán",
+    "department_id": "25"
+  },
+  {
+    "id": "2503",
+    "name": "Cárdenas",
+    "department_id": "25"
+  },
+  {
+    "id": "2504",
+    "name": "Centla",
+    "department_id": "25"
+  },
+  {
+    "id": "2505",
+    "name": "Centro",
+    "department_id": "25"
+  },
+  {
+    "id": "2601",
+    "name": "Ciudad Victoria",
+    "department_id": "26"
+  },
+  {
+    "id": "2602",
+    "name": "Abasolo",
+    "department_id": "26"
+  },
+  {
+    "id": "2603",
+    "name": "Aldama",
+    "department_id": "26"
+  },
+  {
+    "id": "2604",
+    "name": "Altamira",
+    "department_id": "26"
+  },
+  {
+    "id": "2605",
+    "name": "Antiguo Morelos",
+    "department_id": "26"
+  },
+  {
+    "id": "2701",
+    "name": "Tlaxcala",
+    "department_id": "27"
+  },
+  {
+    "id": "2702",
+    "name": "Acuamanala de Miguel Hidalgo",
+    "department_id": "27"
+  },
+  {
+    "id": "2703",
+    "name": "Altzayanca",
+    "department_id": "27"
+  },
+  {
+    "id": "2704",
+    "name": "Amaxac de Guerrero",
+    "department_id": "27"
+  },
+  {
+    "id": "2705",
+    "name": "Apetatitlán de Antonio Carvajal",
+    "department_id": "27"
+  },
+  {
+    "id": "2801",
+    "name": "Xalapa",
+    "department_id": "28"
+  },
+  {
+    "id": "2802",
+    "name": "Acajete",
+    "department_id": "28"
+  },
+  {
+    "id": "2803",
+    "name": "Actopan",
+    "department_id": "28"
+  },
+  {
+    "id": "2804",
+    "name": "Álamo Temapache",
+    "department_id": "28"
+  },
+  {
+    "id": "2805",
+    "name": "Altotonga",
+    "department_id": "28"
+  },
+  {
+    "id": "2901",
+    "name": "Mérida",
+    "department_id": "29"
+  },
+  {
+    "id": "2902",
+    "name": "Abalá",
+    "department_id": "29"
+  },
+  {
+    "id": "2903",
+    "name": "Acanceh",
+    "department_id": "29"
+  },
+  {
+    "id": "2904",
+    "name": "Akil",
+    "department_id": "29"
+  },
+  {
+    "id": "2905",
+    "name": "Baca",
+    "department_id": "29"
+  },
+  {
+    "id": "3001",
+    "name": "Zacatecas",
+    "department_id": "30"
+  },
+  {
+    "id": "3002",
+    "name": "Fresnillo",
+    "department_id": "30"
+  },
+  {
+    "id": "3003",
+    "name": "Guadalupe",
+    "department_id": "30"
+  },
+  {
+    "id": "3004",
+    "name": "Jerez",
+    "department_id": "30"
+  },
+  {
+    "id": "3005",
+    "name": "Río Grande",
+    "department_id": "30"
+  },
+  {
+    "id": "3101",
+    "name": "Toluca",
+    "department_id": "31"
+  },
+  {
+    "id": "3102",
+    "name": "Zinacantepec",
+    "department_id": "31"
+  },
+  {
+    "id": "3103",
+    "name": "Almoloya de Juárez",
+    "department_id": "31"
+  },
+  {
+    "id": "3104",
+    "name": "Atizapán de Zaragoza",
+    "department_id": "31"
+  },
+  {
+    "id": "3105",
+    "name": "Coacalco de Berriozábal",
+    "department_id": "31"
+  },
+  {
+    "id": "3201",
+    "name": "Ciudad de México",
+    "department_id": "32"
+  },
+  {
+    "id": "3202",
+    "name": "Iztapalapa",
+    "department_id": "32"
+  },
+  {
+    "id": "3203",
+    "name": "Gustavo A. Madero",
+    "department_id": "32"
+  },
+  {
+    "id": "3204",
+    "name": "Ecatepec de Morelos",
+    "department_id": "32"
+  },
+  {
+    "id": "3205",
+    "name": "Tlalnepantla de Baz",
+    "department_id": "32"
+  }
+]
