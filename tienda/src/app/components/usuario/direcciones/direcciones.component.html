@@ -137,7 +137,7 @@
                                           
                                           <a class="badge badge-primary" *ngIf="item.principal">Dirección de envío</a>
             
-                                          <a class="badge badge-success" style="cursor: pointer;" *ngIf="!item.principal">Establecer principal</a>
+                                          <a class="badge badge-success" style="cursor: pointer;" *ngIf="!item.principal" (click)="establecer_principal(item._id)">Establecer principal</a>
                                         </div>
                                         <div class="col">
                                           <p class="mb-3">{{item.direccion}}</p>
