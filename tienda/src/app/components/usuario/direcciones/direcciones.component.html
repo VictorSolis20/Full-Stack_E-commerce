@@ -25,11 +25,10 @@
             <!-- Content -->
             <div class="col-lg-8 ml-auto">
                 <div class="d-flex align-items-center justify-content-between mb-4 pb-1 pb-sm-3">
-                    <h1 class="h2 mb-0">Mis direcciones</h1>
-
+                    <h1 class="h2 mb-0">Nueva dirección</h1>
                 </div>
 
-                <form #registroForm="ngForm" (ngSubmit)="registrar(registroForm)">
+                <form class="mb-5" #registroForm="ngForm" (ngSubmit)="registrar(registroForm)">
                     <div class="row mb-3">
                         <div class="col-sm-6 form-group">
                             <label for="ac-fn">Destinatario</label>
@@ -120,6 +119,42 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg">&nbsp;Crear dirección&nbsp;</button>
                 </form>
+
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-1 pb-sm-3">
+                    <h1 class="h2 mb-0">Mis direcciones</h1>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <ng-container *ngFor="let item of direcciones">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 mb-sm-0 mb-3">
+                                          <h3 class="mb-2 font-size-lg">{{item.destinatario}}</h3>
+                                          <span class="d-block mb-3 font-size-sm text-muted">{{item.zip}}</span>
+                                          
+                                          <a class="badge badge-primary" *ngIf="item.principal">Dirección de envío</a>
+            
+                                          <a class="badge badge-success" style="cursor: pointer;" *ngIf="!item.principal">Establecer principal</a>
+                                        </div>
+                                        <div class="col">
+                                          <p class="mb-3">{{item.direccion}}</p>
+                                          <p class="mb-3">
+                                            {{item.pais}} -
+                                            <span *ngIf="item.region">{{item.region}}</span> -
+                                            <span *ngIf="item.provincia">{{item.provincia}}</span> -
+                                            <span *ngIf="item.distrito">{{item.distrito}}</span>
+                                          </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        
+                    </div>
+                </div>
 
             </div>
         </div>
