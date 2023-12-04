@@ -39,4 +39,8 @@ export class GuestService {
   get_Provincias(): Observable<any> {
     return this._http.get('./assets/provincias.json');
   }
+
+  get_Envios(): Observable<any> {
+    return this._http.get('./assets/envios.json');
+  }
 }
