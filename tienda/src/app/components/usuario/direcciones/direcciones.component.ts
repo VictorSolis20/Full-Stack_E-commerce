@@ -31,6 +31,8 @@ export class DireccionesComponent implements OnInit {
   public provincias_arr:Array<any> = [];
   public distritos_arr:Array<any> = [];
 
+  public load_data = true;
+
   constructor(
     private _guestService:GuestService,
     private _clienteService:ClienteService
@@ -68,7 +70,7 @@ export class DireccionesComponent implements OnInit {
     this._clienteService.obtener_direccion_todos_cliente(localStorage.getItem('_id'),this.token).subscribe(
       response=>{
         this.direcciones = response.data;
-        
+        this.load_data = false;
       }
     );
   }

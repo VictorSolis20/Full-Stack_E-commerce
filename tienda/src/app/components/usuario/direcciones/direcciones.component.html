@@ -59,7 +59,8 @@
 
                         <div class="col-sm-6 form-group">
                             <label for="ac-fn">País</label>
-                            <select name="pais" required [(ngModel)]="direccion.pais" class="custom-select custom-select-lg" (change)="select_pais()">
+                            <select name="pais" required [(ngModel)]="direccion.pais"
+                                class="custom-select custom-select-lg" (change)="select_pais()">
                                 <option value="" selected disabled>Seleccionar</option>
                                 <option value="Argentina">Argentina</option>
                                 <option value="Bolivia">Bolivia</option>
@@ -87,8 +88,8 @@
                         </div>
                         <div class="col-sm-6 form-group">
                             <label for="ac-fn">Región</label>
-                            <select id="sl-region" name="region" [(ngModel)]="direccion.region" class="custom-select custom-select-lg"
-                                disabled (change)="select_region()">
+                            <select id="sl-region" name="region" [(ngModel)]="direccion.region"
+                                class="custom-select custom-select-lg" disabled (change)="select_region()">
                                 <option value="" selected disabled>Seleccionar</option>
                                 <option value="{{item.id}}" *ngFor="let item of regiones">{{item.name}}</option>
                             </select>
@@ -125,34 +126,47 @@
 
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
+                <div class="row" *ngIf="!load_data">
+                    <div class="col-12" *ngIf="direcciones.length >= 1">
                         <ng-container *ngFor="let item of direcciones">
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-4 mb-sm-0 mb-3">
-                                          <h3 class="mb-2 font-size-lg">{{item.destinatario}}</h3>
-                                          <span class="d-block mb-3 font-size-sm text-muted">{{item.zip}}</span>
-                                          
-                                          <a class="badge badge-primary" *ngIf="item.principal">Dirección de envío</a>
-            
-                                          <a class="badge badge-success" style="cursor: pointer;" *ngIf="!item.principal" (click)="establecer_principal(item._id)">Establecer principal</a>
+                                            <h3 class="mb-2 font-size-lg">{{item.destinatario}}</h3>
+                                            <span class="d-block mb-3 font-size-sm text-muted">{{item.zip}}</span>
+
+                                            <a class="badge badge-primary" *ngIf="item.principal">Dirección de envío</a>
+
+                                            <a class="badge badge-success" style="cursor: pointer;"
+                                                *ngIf="!item.principal"
+                                                (click)="establecer_principal(item._id)">Establecer principal</a>
                                         </div>
                                         <div class="col">
-                                          <p class="mb-3">{{item.direccion}}</p>
-                                          <p class="mb-3">
-                                            {{item.pais}} -
-                                            <span *ngIf="item.region">{{item.region}}</span> -
-                                            <span *ngIf="item.provincia">{{item.provincia}}</span> -
-                                            <span *ngIf="item.distrito">{{item.distrito}}</span>
-                                          </p>
+                                            <p class="mb-3">{{item.direccion}}</p>
+                                            <p class="mb-3">
+                                                {{item.pais}} -
+                                                <span *ngIf="item.region">{{item.region}}</span> -
+                                                <span *ngIf="item.provincia">{{item.provincia}}</span> -
+                                                <span *ngIf="item.distrito">{{item.distrito}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </ng-container>
-                        
+
+                    </div>
+                    <div class="col-12" *ngIf="direcciones.length == 0">
+                        <h3 class="h6 mb-2 text-uppercase">No se encontraron direcciones</h3>
+                        <h6 class="h1" style="font-size: 2rem !important;">Debe registrar su dirección de envío, por favor.</h6>
+                    </div>
+                </div>
+                <div class="row" *ngIf="load_data">
+                    <div class="col-12 text-center">
+                        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="sr-only">Cargando...</span>
+                        </div>
                     </div>
                 </div>
 
