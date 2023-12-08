@@ -96,9 +96,15 @@ export class CarritoComponent implements OnInit {
         console.log(order);
 
         this.venta.transaccion = order.purchase_units[0].payments.captures[0].id;
-        console.log(this.dventa);
   
-        
+        this.venta.detalles = this.dventa;
+        this._clienteService.registro_compra_cliente(this.venta,this.token).subscribe(
+          response=>{
+            console.log(response);
+            
+          }
+        );
+
       },
       onError : (err: any) =>{
        
