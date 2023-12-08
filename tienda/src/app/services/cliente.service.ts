@@ -197,4 +197,20 @@ export class ClienteService {
     );
   }
 
+  registro_compra_cliente(
+    data: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.post(
+      this.url + 'registro_compra_cliente',data,
+      {
+        headers: headers,
+      }
+    );
+  }
+
 }
