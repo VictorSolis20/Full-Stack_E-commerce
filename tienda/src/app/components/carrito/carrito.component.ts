@@ -41,6 +41,8 @@ export class CarritoComponent implements OnInit {
   public carrito_load = true;
 
   public user : any = {};
+  public descuento = 0;
+  public error_cupon = '';
 
   constructor(
     private _clienteService: ClienteService,
@@ -195,6 +197,37 @@ export class CarritoComponent implements OnInit {
 
     console.log(this.venta);
     
+  }
+
+  validar_cupon(){
+    if(this.venta.cupon){
+      if(this.venta.cupon.toString().length <= 25){
+        
+        this._clienteService.validar_cupon_admin(this.venta.cupon,this.token).subscribe(
+          response=>{
+            if(response.data != undefined){
+              this.error_cupon = '';
+
+              if(response.data.tipo == 'Valor fijo'){
+                this.descuento = response.data.valor;
+                this.total_pagar = this.total_pagar - this.descuento;
+              }else if(response.data.tipo == 'Porcentaje'){
+                this.descuento = (this.total_pagar * response.data.valor)/100;
+                this.total_pagar = this.total_pagar - this.descuento;
+              }
+            }else{
+              this.error_cupon = 'El cupón no se pudo canjear';
+            }
+            
+          }
+        );
+      }else{
+        //NO ES VALIDO
+        this.error_cupon = 'El cupón debe ser menos de 25 caracteres';
+      }
+    }else{
+      this.error_cupon = 'El cupón no es válido';
+    }
   }
 
 }

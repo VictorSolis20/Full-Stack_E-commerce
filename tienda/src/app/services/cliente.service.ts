@@ -229,4 +229,20 @@ export class ClienteService {
     );
   }
 
+  validar_cupon_admin(
+    cupon: any,
+    token: string | number | null
+  ): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: token !== null ? token.toString() : '',
+    });
+    return this._http.get(
+      this.url + 'validar_cupon_admin/'+cupon,
+      {
+        headers: headers,
+      }
+    );
+  }
+
 }
