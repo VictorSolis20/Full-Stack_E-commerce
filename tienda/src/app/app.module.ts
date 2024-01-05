@@ -18,6 +18,7 @@ import { IndexProductoComponent } from './components/productos/index-producto/in
 import { ShowProductoComponent } from './components/productos/show-producto/show-producto.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { DireccionesComponent } from './components/usuario/direcciones/direcciones.component';
+import { DescuentoPipe } from './pipes/descuento.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DireccionesComponent } from './components/usuario/direcciones/direccion
     IndexProductoComponent,
     ShowProductoComponent,
     CarritoComponent,
-    DireccionesComponent
+    DireccionesComponent,
+    DescuentoPipe
   ],
   imports: [
     BrowserModule, 
