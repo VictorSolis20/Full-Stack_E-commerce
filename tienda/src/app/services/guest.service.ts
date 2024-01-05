@@ -28,6 +28,13 @@ export class GuestService {
     });
   }
 
+  obtener_descuento_activo(): Observable<any> {
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this._http.get(this.url + 'obtener_descuento_activo', {
+      headers: headers,
+    });
+  }
+
   get_Regiones(): Observable<any> {
     return this._http.get('./assets/regiones.json');
   }

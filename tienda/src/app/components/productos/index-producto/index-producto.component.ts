@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GLOBAL } from 'src/app/services/GLOBAL';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { io } from "socket.io-client";
+import { GuestService } from 'src/app/services/guest.service';
 declare var noUiSlider: any;
 declare var $: any;
 declare var jQuery: any;
@@ -38,9 +39,12 @@ export class IndexProductoComponent implements OnInit {
 
   public socket = io('http://localhost:4201');
 
+  public descuento_activo : any = undefined;
+
   constructor(
     private _clienteService: ClienteService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _guestService:GuestService
   ) {
     this.token = localStorage.getItem('token');
     this.url = GLOBAL.url;
@@ -106,6 +110,18 @@ export class IndexProductoComponent implements OnInit {
       $('.cs-range-slider-value-max').val(values[1]);
     });
     $('.noUi-tooltip').css('font-size', '11px');
+
+    this._guestService.obtener_descuento_activo().subscribe(
+      response=>{
+
+        if(response.data != undefined){
+          this.descuento_activo = response.data[0];
+        }else{
+          this.descuento_activo = undefined;
+        }
+        
+      }
+    )
   }
 
   buscar_categorias() {
